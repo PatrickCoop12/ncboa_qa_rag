@@ -27,8 +27,8 @@ from dotenv import load_dotenv
 chroma_client = chromadb.Client()
 
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+OPENAI_API_KEY = st.secrets['OPENAI_API_KEY']
+GOOGLE_API_KEY = st.secrets['GOOGLE_API_KEY']
 chromadb.api.client.SharedSystemClient.clear_system_cache()
 # from streamlit_chromadb_connection import ChromadbConnection
 
