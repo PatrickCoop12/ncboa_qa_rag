@@ -112,7 +112,7 @@ def generate_response(query: str):
 # Page configurations and setup
 
 st.set_page_config(page_title="RefPrep", page_icon=":tada:", layout="wide")
-st.title(":blue[Ref]:red[Prep] Extract")
+st.title(":blue[Ref]:red[Prep]")
 st.subheader('Your Personal Rule Expert', divider='red')
 with st.expander('Instructions'):
     st.markdown(
@@ -160,7 +160,7 @@ chat_history = []
 
 # Chat configuration and setup
 
-if prompts := st.chat_input("Ask me a question about your document!"):
+if prompts := st.chat_input("Ask me a question about NFHS rules!"):
     # st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompts)
