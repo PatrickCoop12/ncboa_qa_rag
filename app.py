@@ -111,39 +111,24 @@ def generate_response(query: str):
 
 # Page configurations and setup
 
-st.set_page_config(page_title="PostGame Extract", page_icon=":tada:", layout="wide")
-st.title(":blue[Post]:red[Game] Extract")
-st.subheader('Interactive Sports Document OCR Tool', divider='red')
+st.set_page_config(page_title="RefPrep", page_icon=":tada:", layout="wide")
+st.title(":blue[Ref]:red[Prep] Extract")
+st.subheader('Your Personal Rule Expert', divider='red')
 with st.expander('Instructions'):
     st.markdown(
         """
         #### Getting Started
-        1. To get started with the app, please use the file uploader to upload an image of a document or pdf     
-        (the tool currently only supports single page uploads).
-          * If the sidebar containing the file uploader is not showing, please click the arrow in the top left corner 
-                         (on mobile you may have to scroll up)
-        2. Upon upload of your file:
-          * An interactive chat will appear below. You may use the chat to ask specific questions about the document.
-          * An image of the file will be available for view
-          * Several export options will be made available by selecting an option from the drop-down on the left. After export is generated, please click the download button.
-        - Export Options: 
-          - For Image Files (.jpg, .jpeg, .png) 
-            - Raw Text Extraction
-            - Converted Scanned Image* (converts raw image of document into a digital scan). Best used for handwritten notes, and printed templates and forms containing handwriting.
-            - Table Extractor to Excel (PDFs containing tabular data can be automatically converted to excel for further analysis)
-          - For PDF Files
-            - Raw Text Extraction
-            - Table Extractor to Excel 
-        ###### *please note scan conversion is only available for image files uploaded, and not available for PDFs.
+        To get started, simply ask RefPrep a question below. The assistant will review the NFHS rules book and provide
+         a response along with relevant sections for reference. 
+         * Leave your rule book in your bag
+         * Receieve reliable responses that can be cross referenced with specific sections of the rule book    
+         * Get answers to your questions pre-game, mid-game, or at any time you have a question about rules
+        
         """
     )
 st.subheader('', divider='blue')
 
 left_column, right_column = st.columns(2)
-st.sidebar.markdown('### About')
-st.sidebar.markdown(
-    'This app has been designed to allow users the ability to capture a photo of a variety of documents relating to sports. These documents may include anything from boxscores, play-by-play sheets, and even handwritten notes. PDF files are also supported.')
-file_upload = st.sidebar.file_uploader("Please Upload a File", type=['jpg', 'jpeg', 'png', 'pdf'])
 
 # Initializing messages and memory in the session state for call back to chat history during chat session
 if "memory" not in st.session_state:
