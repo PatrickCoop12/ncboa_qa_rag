@@ -7,3 +7,4 @@ langgraph
 google-generativeai
 typing-extensions
 docx2txt
+pysqlite3-binary
